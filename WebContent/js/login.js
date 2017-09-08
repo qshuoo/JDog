@@ -11,7 +11,7 @@ $(document).ready(function() {
 				data:{uname:$("#uname").val(),pwd:$("#pwd").val()},
 				success:function(data){
 					if("success" == data){
-						window.open("index.jsp");
+						window.location.href="index.jsp"; 
 					} else {
 						$(".errinf").fadeIn();
 					}
