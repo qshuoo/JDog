@@ -6,33 +6,27 @@
 <meta charset="utf-8">
 <title>登录</title>
 <link rel="stylesheet" href="css/style.css">
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#login").click(function(){
-			$(".org_box").fadeIn();
-		});
+<script type="text/jscript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
 
-	});
-</script>
 </head>
-<body>
-	<div class="org_box">
-		<span class="org_bot_inf">用户名或密码输入错误，请重新输入</span> <span
-			class="org_bot_cor"></span>
 
-	</div>
+<body>
+
 	<div class="container">
+
+
 		<div class="login">
+
 			<h1>登录</h1>
 
-			<form method="post" action="#" >
+			<form method="post">
 				<p>
-					<input type="text" name="login" value=""
-						placeholder="Username or Email">
+					<input type="text" id="uname" name="username" value=""
+						placeholder="Username">
 				</p>
 				<p>
-					<input type="password" name="password" value=""
+					<input type="password" id="pwd" name="password" value=""
 						placeholder="Password">
 				</p>
 				<p class="remember_me">
@@ -48,8 +42,19 @@
 				没有账号? <a href="index.html">点此注册</a>.
 			</p>
 		</div>
+		<div class="errinf">
+			<span class="errinf_cor"></span> <span class="errinf_tip">用户名或密码不正确，请重新输入</span>
+			<span class="errinf_close">×</span>
+		</div>
+		<div class="nameinf">
+			<span class="nameinf_cor"></span> <span class="nameinf_tip">用户名不能为空</span>
+			<span class="nameinf_close">×</span>
+		</div>
+		<div class="pwdinf">
+			<span class="pwdinf_cor"></span> <span class="pwdinf_tip">密码不能为空</span>
+			<span class="pwdinf_close">×</span>
+		</div>
 	</div>
-
 
 </body>
 </html>
