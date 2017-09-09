@@ -32,9 +32,9 @@
 
 		<div class="container">
 			<div class="row clearfix">
-				<div class="col-md-7 column">
+				<div class="col-md-6 column">
 				</div>
-				<div class="col-md-5 column">
+				<div class="col-md-6 column">
 					<h1 style="padding-top: 50px;">
 						欢迎注册JDog
 					</h1>
