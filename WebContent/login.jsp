@@ -3,57 +3,61 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="utf-8">
-<title>登录</title>
-<link rel="stylesheet" href="css/style.css">
-<script type="text/jscript" src="js/jquery-3.2.1.min.js"></script>
+<meta charset="utf-8" />
+<title>欢迎登录JDog</title>
+<link rel="stylesheet"
+	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
-
 </head>
 
 <body>
-
 	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-6 column"></div>
+			<div class="col-md-6 column" style="padding-top: 80px;">
 
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<h1>欢迎登录JDog</h1>
+					</div>
+					<div class="form-group">
+						<h3>JDog,每天都有新发现</h3>
+					</div>
+					<div id="div_name" class="form-group input-group-lg"
+						style="padding-top: 40px;">
 
-		<div class="login">
+						<input id="name" type="text" class="form-control"
+							placeholder="用户名" /> <span id="name_tip"
+							class="glyphicon glyphicon-remove"
+							style="color: #BD4147; display: none; padding-top: 10px;">用户名不能为空</span>
 
-			<h1>登录</h1>
+					</div>
+					<div id="div_pwd" class="form-group input-group-lg"
+						style="padding-top: 20px;">
+						<input id="pwd" type="password" class="form-control"
+							placeholder="密码" /> <span id="pwd_tip"
+							class="glyphicon glyphicon-remove"
+							style="color: #BD4147; display: none; padding-top: 10px;">密码不能为空</span>
+					</div>
+					<div id="myAlert" class="form-group alert alert-warning"
+						style="display: none; color: #BD4147;">
+						<a href="#" class="close" data-dismiss="alert">&times;</a> <strong>用户名或密码不正确</strong>
+					</div>
+					<div class="form-group" style="padding-top: 20px;">
+						没有账号？ <a href="#">点此注册</a>
+					</div>
+					<div class="form-group" style="padding-top: 20px;">
+						<button id="login" type="button"
+							class="btn btn-primary btn-lg btn-block">点击登录</button>
+					</div>
 
-			<form method="post">
-				<p>
-					<input type="text" id="uname" name="username" value=""
-						placeholder="Username">
-				</p>
-				<p>
-					<input type="password" id="pwd" name="password" value=""
-						placeholder="Password">
-				</p>
-				<p class="remember_me">
-					<label> <input type="checkbox" name="remember_me"
-						id="remember_me"> 记住我
-					</label>
-				</p>
-				<p class="button">
-					<input id="login" type="button" name="button" value="登录">
-				</p>
-			</form>
-			<p>
-				没有账号? <a href="index.html">点此注册</a>.
-			</p>
+				</form>
+			</div>
 		</div>
-		<div class="errinf">
-			<span class="errinf_cor"></span> <span class="errinf_tip">用户名或密码不正确，请重新输入</span>
-			<span class="errinf_close">×</span>
-		</div>
-		<div class="nameinf">
-			<span class="nameinf_cor"></span> <span class="nameinf_tip">用户名不能为空</span>
-			<span class="nameinf_close">×</span>
-		</div>
-		<div class="pwdinf">
-			<span class="pwdinf_cor"></span> <span class="pwdinf_tip">密码不能为空</span>
-			<span class="pwdinf_close">×</span>
-		</div>
+
 	</div>
 
 </body>

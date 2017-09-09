@@ -1,42 +1,52 @@
 $(document).ready(function() {
+	$("#name").blur(function() {
+		if ($("#name").val() == "") {
+			$("#div_name").addClass("has-error");
+			$("#name_tip").fadeIn();
+		}
+	});
+	$("#name").focus(function() {
+		$("#div_name").removeClass("has-error");
+		$("#name_tip").hide();
+		$("#myAlert").fadeOut();
+	});
+	$("#pwd").blur(function() {
+		if ($("#pwd").val() == "") {
+			$("#div_pwd").addClass("has-error");
+			$("#pwd_tip").fadeIn();
+		}
+	});
+	$("#pwd").focus(function() {
+		$("#div_pwd").removeClass("has-error");
+		$("#pwd_tip").hide();
+		$("#myAlert").fadeOut();
+	});
 	$("#login").click(function() {
-		if ($("#uname").val() == "") {
-			$(".nameinf").fadeIn();
-		} else if ($("#pwd").val() == "") {
-			$(".pwdinf").fadeIn();
-		} else {
+		if ($("#name").val() != "" && $("#pwd").val() != "") {
 			$.ajax({
-				url:"LoginServlet",
-				type:"post",
-				data:{uname:$("#uname").val(),pwd:$("#pwd").val()},
-				success:function(data){
-					if("success" == data){
-						window.location.href="index.jsp"; 
+				url : "LoginServlet",
+				tyle : "post",
+				data : {
+					uname : $("#name").val(),
+					pwd : $("#pwd").val()
+				},
+				success : function(data) {
+					if ("success" == data) {
+						window.location.href = "index.jsp";
 					} else {
-						$(".errinf").fadeIn();
+						$("#myAlert").show();
 					}
 				}
 			});
+		} else {
+			if ($("#name").val() == "") {
+				$("#div_name").addClass("has-error");
+				$("#name_tip").fadeIn();
+			}
+			if ($("#pwd").val() == "") {
+				$("#div_pwd").addClass("has-error");
+				$("#pwd_tip").fadeIn();
+			}
 		}
-	});
-	$(".nameinf_close,.pwdinf_close,.errinf_close").mouseover(function() {
-		this.style.color = "red";
-	});
-	$(".nameinf_close,.pwdinf_close,.errinf_close").mouseout(function() {
-		this.style.color = "black";
-	});
-	$(".nameinf_close").click(function() {
-		$(".nameinf").fadeOut();
-	});
-	$(".pwdinf_close").click(function() {
-		$(".pwdinf").fadeOut();
-	});
-	$(".errinf_close").click(function() {
-		$(".errinf").fadeOut();
-	});
-	$("#uname,#pwd").click(function() {
-		$(".errinf").fadeOut();
-		$(".pwdinf").fadeOut();
-		$(".nameinf").fadeOut();
 	});
 });
