@@ -12,6 +12,7 @@
 		<script type="text/javascript" src="js/register.js"></script>
 
 	</head>
+
 	<body>
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -23,7 +24,7 @@
 					<div class="modal-footer">
 						<h4 align="center" class="modal-title" id="myModalLabel">谢谢你请我吃糖果</h4>
 					</div>
-					
+
 				</div>
 				<!-- /.modal-content -->
 			</div>
@@ -34,17 +35,19 @@
 			<div class="row clearfix">
 				<div class="col-md-6 column">
 				</div>
-				<div class="col-md-6 column">
-					<h1 style="padding-top: 50px;">
-						欢迎注册JDog
-					</h1>
-					<h3 style="padding-top: 30px;">
-						每一天，都有新发现。
+				<div class="col-md-6 column" style="padding-top: 80px;">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<h1>欢迎注册JDog</h1>
+						</div>
+						<div class="form-group">
+							<h3> JDog，每天都有新发现。
 						<a  data-toggle="modal" data-target="#myModal" style="float: right;" href="">联系我们</a>
 					</h3>
-					<form class="form-horizontal" role="form" style="padding-top: 30px;">
+						</div>
 						<div id="div_name" class="form-group input-group-lg">
 							<input type="text" class="form-control" id="name" placeholder="填写用户名" />
+
 							<span id="name_tip" class="glyphicon glyphicon-remove tip">用户名不能为空</span>
 						</div>
 						<div id="div_pwd" class="form-group input-group-lg">

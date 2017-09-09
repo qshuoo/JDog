@@ -24,7 +24,7 @@
 							<h1>欢迎登录JDog</h1>
 						</div>
 						<div class="form-group">
-							<h3>JDog,每天都有新发现</h3>
+							<h3>JDog，每天都有新发现</h3>
 						</div>
 						
 						<div id="div_name" class="form-group input-group-lg" style="padding-top: 40px;">
