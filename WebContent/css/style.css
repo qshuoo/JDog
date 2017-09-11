@@ -3,3 +3,10 @@
 	display: none;
 	padding-top: 10px;
 }
+.imgs{
+    position: fixed;
+    top: 0;
+    left: 0;
+    float: left;
+    display: none;  
+}
