@@ -34,6 +34,12 @@
 		<div class="container">
 			<div class="row clearfix">
 				<div class="col-md-6 column">
+					<div id="image">
+						<img class="imgs" id="img1" src="img/01-1.jpg"/>
+						<img class="imgs" id="img2" src="img/01-2.jpg"/>
+						<img class="imgs" id="img3" src="img/01-3.jpg"/>
+						<img class="imgs" id="img4" src="img/01-4.jpg"/>
+					</div>	
 				</div>
 				<div class="col-md-6 column" style="padding-top: 80px;">
 					<form class="form-horizontal" role="form">
@@ -41,28 +47,28 @@
 							<h1>欢迎注册JDog</h1>
 						</div>
 						<div class="form-group">
-							<h3> JDog，每天都有新发现。
+							<h3> JDog，每天都有新发现
 						<a  data-toggle="modal" data-target="#myModal" style="float: right;" href="">联系我们</a>
 					</h3>
 						</div>
-						<div id="div_name" class="form-group input-group-lg">
+						<div id="div_name" class="form-group input-group-lg" style="padding-top: 40px;">
 							<input type="text" class="form-control" id="name" placeholder="填写用户名" />
 
 							<span id="name_tip" class="glyphicon glyphicon-remove tip">用户名不能为空</span>
 						</div>
-						<div id="div_pwd" class="form-group input-group-lg">
+						<div id="div_pwd" class="form-group input-group-lg" style="padding-top: 20px;">
 							<input type="password" class="form-control" id="pwd" placeholder="填写密码" />
 							<span id="pwd_tip" class="glyphicon glyphicon-remove tip">密码不能为空</span>
 						</div>
-						<div id="div_confirm" class="form-group input-group-lg">
+						<div id="div_confirm" class="form-group input-group-lg" style="padding-top: 20px;">
 							<input type="password" class="form-control" id="confirm" placeholder="确认密码" />
 							<span id="confirm_tip" class="glyphicon glyphicon-remove tip">密码不对应</span>
 						</div>
-						<div id="div_phone" class="form-group input-group-lg">
+						<div id="div_phone" class="form-group input-group-lg" style="padding-top: 20px;">
 							<input type="phone" class="form-control" id="phone" placeholder="电话" />
 							<span id="phone_tip" class="glyphicon glyphicon-remove tip">电话格式错误</span>
 						</div>
-						<div class="form-group">
+						<div class="form-group" style="padding-top: 20px;">
 							<button type="button" class="btn btn-primary btn-lg btn-block">立即注册</button>
 						</div>
 					</form>

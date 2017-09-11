@@ -16,6 +16,12 @@
 		<div class="container">
 			<div class="row clearfix">
 				<div class="col-md-6 column">
+					<div id="image">
+						<img class="imgs" id="img1" src="img/01-1.jpg"/>
+						<img class="imgs" id="img2" src="img/01-2.jpg"/>
+						<img class="imgs" id="img3" src="img/01-3.jpg"/>
+						<img class="imgs" id="img4" src="img/01-4.jpg"/>
+					</div>	
 				</div>
 				<div class="col-md-6 column" style="padding-top: 80px;">
 
