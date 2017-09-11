@@ -1,15 +1,16 @@
 $(document).ready(function() {
 	var index = 1;
-	function toimg(){
-		$("#img"+index).toggle();
+	function toimg() {
+		$("#img" + index).toggle();
 		index++;
-  		if(index>4){
-  			index=1;
-  		}
-  		$("#img"+index).show();
-	};
+		if (index > 4) {
+			index = 1;
+		}
+		$("#img" + index).show();
+	}
+	;
 	toimg();
-	var time = setInterval(toimg,2000); 
+	var time = setInterval(toimg, 2000);
 	$("#name").blur(function() {
 		if ($("#name").val() == "") {
 			$("#div_name").addClass("has-error");

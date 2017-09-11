@@ -15,12 +15,12 @@
 
 	<body>
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
+			<div class="modal-dialog" style="width: 300px;">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
-					<div class="modal-body">图片</div>
+					<div align="center" class="modal-body"><img src="img/wxsk.png" align="center" height="200px" width="200px" /></div>
 					<div class="modal-footer">
 						<h4 align="center" class="modal-title" id="myModalLabel">谢谢你请我吃糖果</h4>
 					</div>
@@ -46,30 +46,33 @@
 						<div class="form-group">
 							<h1>欢迎注册JDog</h1>
 						</div>
-						<div class="form-group">
+						<div class="form-group col-md-11">
 							<h3> JDog，每天都有新发现
 						<a  data-toggle="modal" data-target="#myModal" style="float: right;" href="">联系我们</a>
 					</h3>
 						</div>
-						<div id="div_name" class="form-group input-group-lg" style="padding-top: 40px;">
+						<div id="div_name" class="form-group input-group-lg col-md-11" style="padding-top: 40px;">
 							<input type="text" class="form-control" id="name" placeholder="填写用户名" />
-
 							<span id="name_tip" class="glyphicon glyphicon-remove tip">用户名不能为空</span>
 						</div>
-						<div id="div_pwd" class="form-group input-group-lg" style="padding-top: 20px;">
+						<span id="succ1" style="margin-top:50px;color:green;font-size:large;display: none;" class="col-md-1 glyphicon glyphicon-ok"></span>
+						<div id="div_pwd" class="form-group input-group-lg col-md-11" style="padding-top: 20px;">
 							<input type="password" class="form-control" id="pwd" placeholder="填写密码" />
 							<span id="pwd_tip" class="glyphicon glyphicon-remove tip">密码不能为空</span>
 						</div>
-						<div id="div_confirm" class="form-group input-group-lg" style="padding-top: 20px;">
+						<span id="succ2" style="margin-top:30px;color:green;font-size:large;display: none;" class="col-md-1 glyphicon glyphicon-ok"></span>
+						<div id="div_confirm" class="form-group input-group-lg col-md-11" style="padding-top: 20px;">
 							<input type="password" class="form-control" id="confirm" placeholder="确认密码" />
 							<span id="confirm_tip" class="glyphicon glyphicon-remove tip">密码不对应</span>
 						</div>
-						<div id="div_phone" class="form-group input-group-lg" style="padding-top: 20px;">
+						<span id="succ3" style="margin-top:30px;color:green;font-size:large;display: none;" class="col-md-1 glyphicon glyphicon-ok"></span>
+						<div id="div_phone" class="form-group input-group-lg col-md-11" style="padding-top: 20px;">
 							<input type="phone" class="form-control" id="phone" placeholder="电话" />
 							<span id="phone_tip" class="glyphicon glyphicon-remove tip">电话格式错误</span>
 						</div>
-						<div class="form-group" style="padding-top: 20px;">
-							<button type="button" class="btn btn-primary btn-lg btn-block">立即注册</button>
+						<span id="succ4" style="margin-top:30px;color:green;font-size:large;display: none;" class="col-md-1 glyphicon glyphicon-ok"></span>
+						<div class="form-group col-md-11" style="padding-top: 20px;">
+							<button id="reg" type="button" class="btn btn-primary btn-lg btn-block">立即注册</button>
 						</div>
 					</form>
 				</div>

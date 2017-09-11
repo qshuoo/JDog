@@ -19,4 +19,24 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegCheckServlet</display-name>
+    <servlet-name>RegCheckServlet</servlet-name>
+    <servlet-class>com.jdog.control.RegCheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegCheckServlet</servlet-name>
+    <url-pattern>/RegCheckServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterServlet</display-name>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.jdog.control.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

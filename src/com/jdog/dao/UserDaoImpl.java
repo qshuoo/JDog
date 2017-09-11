@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.junit.Test;
 
+import com.jdog.domain.User;
 import com.jdog.jdbcutil.JDBCConnPool;
 
 
@@ -39,16 +39,17 @@ public class UserDaoImpl implements UserDao {
 		}
 		return false;
 	}
-	
-	@Test
-	public void test() {
+
+	@Override
+	public boolean getUserByName(String name) {
+		// TODO Auto-generated method stub
 		Connection conn = JDBCConnPool.getInstance().getConnection();
+		String sql = "select * from user where uname = "+"\""+name+"\"";
 		try {
-			Statement st = conn.createStatement();
-			String sql = "select * from user";
-			ResultSet res = st.executeQuery(sql);
+			Statement pst =  conn.createStatement();
+			ResultSet res = pst.executeQuery(sql);
 			while(res.next()) {
-				System.out.println(res.getString("uname"));
+				return true;
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -61,7 +62,36 @@ public class UserDaoImpl implements UserDao {
 				e.printStackTrace();
 			}
 		}
-		
+		return false;
+	}
+
+	@Override
+	public boolean addUser(User user) {
+		// TODO Auto-generated method stub
+		Connection conn = JDBCConnPool.getInstance().getConnection();
+		String sql = "insert into user (uname,upwd,rname,sex,phone,email) values(?,?,?,?,?,?)";
+		try {
+			PreparedStatement pst =  conn.prepareStatement(sql);
+			pst.setString(1, user.getUname());
+			pst.setString(2, user.getPwd());
+			pst.setString(3, user.getRname());
+			pst.setString(4, user.getSex());
+			pst.setString(5, user.getPhone());
+			pst.setString(6, user.getEmail());
+			return pst.executeUpdate() > 0;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return false;
 	}
 
 }

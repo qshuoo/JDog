@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.jdog.dao.UserDao;
-import com.jdog.dao.UserDaoImpl;
+import com.jdog.service.UserService;
+import com.jdog.service.UserServiceImpl;
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -20,9 +20,9 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		UserDao ud = new UserDaoImpl();
+		UserService us = new UserServiceImpl();
 		PrintWriter out = response.getWriter();
-		if (ud.login(request.getParameter("uname"), request.getParameter("pwd"))) {
+		if (us.login(request.getParameter("uname"), request.getParameter("pwd"))) {
 			out.write("success");
 			out.flush();
 		}
