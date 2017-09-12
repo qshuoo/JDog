@@ -9,6 +9,7 @@
 
 </head>
 <body>
+	<%@ include file="head.jsp" %>  
 	Hello World!
 </body>
 </html>

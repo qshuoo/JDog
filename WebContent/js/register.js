@@ -82,7 +82,6 @@ $(document).ready(function() {
 	});
 
 	$("#reg").click(function() {
-
 		if ($("#name").val() == "") {
 			$("#div_name").addClass("has-error");
 			$("#name_tip").text("用户名不能为空");
@@ -110,8 +109,8 @@ $(document).ready(function() {
 					phone : $("#phone").val()
 				},
 				success : function(data) {
-					if ("success" == data) {
-						window.location.href = "index.jsp";
+					if ("success" == data) {	
+						$("#reg1").click();
 					} else {
 						alert("注册失败");
 					}
@@ -119,5 +118,15 @@ $(document).ready(function() {
 			});
 		}
 
+	});
+	$("#reg1").click(function() {
+		var waittime = 5;
+		var wait = setInterval(function() {
+			if((--waittime)==0){
+				window.location.href = "index.jsp";
+			}
+			document.getElementById("waitlog").innerHTML = "注册成功,"+(waittime)+"秒后跳转到登陆界面";
+		},1000);
+		$("#wait").show();
 	});
 });
