@@ -59,7 +59,9 @@ $(document).ready(function() {
 			$("#div_confirm").addClass("has-error");
 			$("#confirm_tip").fadeIn();
 		} else {
-			$("#succ3").fadeIn();
+			if($("#confirm").val() != ""){
+				$("#succ3").fadeIn();
+			}
 		}
 	});
 	$("#confirm").focus(function() {
