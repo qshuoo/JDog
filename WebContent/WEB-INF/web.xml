@@ -39,4 +39,14 @@
     <servlet-name>RegisterServlet</servlet-name>
     <url-pattern>/RegisterServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoffServlet</display-name>
+    <servlet-name>LogoffServlet</servlet-name>
+    <servlet-class>com.jdog.control.LogoffServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoffServlet</servlet-name>
+    <url-pattern>/LogoffServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.jdog.service.UserService;
 import com.jdog.service.UserServiceImpl;
@@ -22,7 +23,9 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		UserService us = new UserServiceImpl();
 		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession();
 		if (us.login(request.getParameter("uname"), request.getParameter("pwd"))) {
+			session.setAttribute("UserName", request.getParameter("uname"));
 			out.write("success");
 			out.flush();
 		}

@@ -14,6 +14,16 @@
 	</head>
 
 	<body>
+		<div class="modal fade" id="wait" aria-hidden="true" data-backdrop="static" style="display: none;">
+			<div class="modal-dialog" style="wedth: 70%;height: 30%;">
+				<div class="modal-content" align="center">
+					<div align="center" class="modal-body"><p id="waitlog" style="font-size: 18px;">注册成功,5秒后跳转到登陆界面</p></div>
+					<div align="center">
+						<a href="login.jsp" class="btn btn-primary btn-lg btn-bloc">立即跳转</a>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog" style="width: 300px;">
 				<div class="modal-content">
@@ -24,7 +34,6 @@
 					<div class="modal-footer">
 						<h4 align="center" class="modal-title" id="myModalLabel">谢谢你请我吃糖果</h4>
 					</div>
-
 				</div>
 				<!-- /.modal-content -->
 			</div>
@@ -73,6 +82,9 @@
 						<span id="succ4" style="margin-top:30px;color:green;font-size:large;display: none;" class="col-md-1 glyphicon glyphicon-ok"></span>
 						<div class="form-group col-md-11" style="padding-top: 20px;">
 							<button id="reg" type="button" class="btn btn-primary btn-lg btn-block">立即注册</button>
+						</div>
+						<div style="display: none;">
+							<a id="reg1" data-toggle="modal" data-target="#wait"></a>
 						</div>
 					</form>
 				</div>
