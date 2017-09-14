@@ -54,4 +54,24 @@
     <servlet-name>LogoffServlet</servlet-name>
     <url-pattern>/LogoffServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>VaildateCodeServlet</display-name>
+    <servlet-name>VaildateCodeServlet</servlet-name>
+    <servlet-class>com.jdog.control.VaildateCodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VaildateCodeServlet</servlet-name>
+    <url-pattern>/VaildateCodeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CodeCheckServlet</display-name>
+    <servlet-name>CodeCheckServlet</servlet-name>
+    <servlet-class>com.jdog.control.CodeCheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CodeCheckServlet</servlet-name>
+    <url-pattern>/CodeCheckServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -80,6 +80,17 @@
 							<span id="phone_tip" class="glyphicon glyphicon-remove tip">电话格式错误</span>
 						</div>
 						<span id="succ4" style="margin-top:30px;color:green;font-size:large;display: none;" class="col-md-1 glyphicon glyphicon-ok"></span>
+						<div id="div_code" class="form-group input-group-lg col-md-5" style="padding-top: 20px;">
+							<input type="text" class="form-control" id="validcode" placeholder="请输入验证码" />
+							<span id="code_tip" class="glyphicon glyphicon-remove tip">验证码不能为空</span>
+						</div>	
+						<span id="succ5" style="margin-top:30px;color:green;font-size:large;display: none;" class="col-md-1 glyphicon glyphicon-ok"></span>
+						<div id="div_codeimg" class="form-group input-group-lg col-md-7" style="padding-top: 20px;padding-left:32px; display: block; float: right;">
+							<img src="VaildateCodeServlet" id="code" class="code" style="width:200px; height: 46px; cursor:pointer;">
+						</div>
+						<div id="div_change" class="form-group input-group-lg col-md-11" style="display: block;">
+							<a id="change" style="float: right;" href="javascript:void(0);">看不清楚，换一张</a>
+						</div>
 						<div class="form-group col-md-11" style="padding-top: 20px;">
 							<button id="reg" type="button" class="btn btn-primary btn-lg btn-block">立即注册</button>
 						</div>
