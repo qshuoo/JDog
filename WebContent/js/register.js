@@ -1,5 +1,13 @@
 $(document).ready(function() {
 	var index = 1;
+	var change = 1;
+	$("#div_change").click(function() {
+		$(".code").attr("src","VaildateCodeServlet?s="+(change++));
+	});
+	$("#div_codeimg").click(function() {
+		$(".code").attr("src","VaildateCodeServlet?s="+(change++));
+		
+	});
 	function toimg() {
 		$("#img" + index).toggle();
 		index++;
@@ -39,6 +47,7 @@ $(document).ready(function() {
 	$("#name").focus(function() {
 		$("#div_name").removeClass("has-error");
 		$("#name_tip").hide();
+		$("#succ1").fadeOut();
 	});
 
 	$("#pwd").blur(function() {
@@ -52,6 +61,8 @@ $(document).ready(function() {
 	$("#pwd").focus(function() {
 		$("#div_pwd").removeClass("has-error");
 		$("#pwd_tip").hide();
+		$("#succ1").fadeOut();
+		
 	});
 
 	$("#confirm").blur(function() {
@@ -67,6 +78,7 @@ $(document).ready(function() {
 	$("#confirm").focus(function() {
 		$("#div_confirm").removeClass("has-error");
 		$("#confirm_tip").hide();
+		$("#succ1").fadeOut();
 	});
 
 	$("#phone").blur(function() {
@@ -81,8 +93,44 @@ $(document).ready(function() {
 	$("#phone").focus(function() {
 		$("#div_phone").removeClass("has-error");
 		$("#phone_tip").hide();
+		$("#succ1").fadeOut();
 	});
 
+	$("#validcode").blur(function() {
+		if($("#validcode").val()==""){
+			$("#div_code").addClass("has-error");
+			$("#code_tip").text("验证码不能为空");
+			$("#code_tip").fadeIn();
+		} else{
+			$.ajax({
+				url : "CodeCheckServlet",
+				type : "post",
+				data : {
+					code : $("#validcode").val()
+				},
+				success : function(data) {
+					if("success" != data){
+						$("#div_code").addClass("has-error");
+						$("#code_tip").text("验证码错误");
+						$("#code_tip").fadeIn();
+						$("#succ5").fadeOut();
+					}
+					else{
+						$("#succ5").fadeIn();
+							
+					}
+				}
+
+			});
+		}
+	});
+	$("#validcode").focus(function() {
+		$("#div_codeimg").show();
+		$("#div_change").show();
+		$("#div_code").removeClass("has-error");
+		$("#code_tip").hide();
+		$("#succ5").fadeOut();
+	});
 	$("#reg").click(function() {
 		if ($("#name").val() == "") {
 			$("#div_name").addClass("has-error");
@@ -100,6 +148,11 @@ $(document).ready(function() {
 		if ($("#confirm").val() != $("#pwd").val()) {
 			$("#div_confirm").addClass("has-error");
 			$("#confirm_tip").fadeIn();
+		}
+		if($("#validcode").val()==""){
+			$("#div_code").addClass("has-error");
+			$("#code_tip").text("验证码不能为空");
+			$("#code_tip").fadeIn();
 		}
 		if ($("div.has-error").length == 0) {
 			$.ajax({
