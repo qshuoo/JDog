@@ -86,25 +86,49 @@ public class UserDaoImpl implements UserDao {
 		return false;
 	}
 	
-	@Test
-	public void test() {
-		Connection conn = null;
-		Statement st = null;
-		ResultSet rs = null;
+
+	@Override
+	public int getIdByName(String name) {
+		// TODO Auto-generated method stub
+		Connection conn = JDBCConnPool.getConnection();
+		Statement pst =  null;
+		ResultSet res = null;
+		String sql = "select uid from user where uname = "+"\""+name+"\"";
 		try {
-			conn = JDBCConnPool.getConnection();
-			st = conn.createStatement();
-			rs = st.executeQuery("select *  from user");
-			while(rs.next()) {
-				System.out.println(rs.getString("uname"));
+			pst =  conn.createStatement();
+			res = pst.executeQuery(sql);
+			while(res.next()) {
+				return res.getInt("uid");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			JDBCConnPool.close(conn, st, rs);
+			JDBCConnPool.close(conn, pst, res);
 		}
-		
+		return 0;
+	}
+
+	@Override
+	public String getRnameByUname(String name) {
+		// TODO Auto-generated method stub
+		Connection conn = JDBCConnPool.getConnection();
+		Statement pst =  null;
+		ResultSet res = null;
+		String sql = "select rname from user where uname = "+"\""+name+"\"";
+		try {
+			pst =  conn.createStatement();
+			res = pst.executeQuery(sql);
+			while(res.next()) {
+				return res.getString("rname");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCConnPool.close(conn, pst, res);
+		}
+		return null;
 	}
 
 }

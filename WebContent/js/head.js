@@ -1,11 +1,9 @@
 $(document).ready(function() {
-	if(username == "null"){
-		$(".dropdown").hide();
-		$(".tologin").show();
-	}
-	else{
-		$(".tologin").hide();
-		$(".dropdown").show();
-		
+	if($("#judge").text() == ""){
+		$("#name_control").hide();
+		$("#login_control").show();
+	} else {
+		$("#name_control").show();
+		$("#login_control").hide();
 	}
 });

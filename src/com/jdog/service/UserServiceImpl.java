@@ -29,4 +29,17 @@ public class UserServiceImpl implements UserService {
 		return ud.addUser(user);
 	}
 
+	@Override
+	public int getIdByName(String name) {
+		// TODO Auto-generated method stub
+		return ud.getIdByName(name);
+	}
+
+	@Override
+	public String getRnameByUname(String name) {
+		// TODO Auto-generated method stub
+		String rname = ud.getRnameByUname(name);
+		return rname == null?name:rname;
+	}
+
 }

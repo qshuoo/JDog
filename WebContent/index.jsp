@@ -14,7 +14,7 @@
 	</head>
 
 	<body>
-	<jsp:include page="head.jsp"></jsp:include>
+	<%@include file="head.jsp" %>
 		
 
 		<div id="myCarousel" class="carousel slide">
@@ -50,8 +50,35 @@
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
-
 		
-	<jsp:include page="tail.jsp" ></jsp:include>
+		<div class="container" align="center" style="padding-top: 50px;color: white;">
+			<div class="col-md-3">
+				<div id="card1" style="height: 110px;background-color: #17A2B8;">
+					<font style="font-size: xx-large;padding-top: 20px;" class="glyphicon glyphicon-refresh"><br />7天退货</font>
+				</div>
+
+			</div>
+			<div class="col-md-3">
+				<div id="card2" style="height: 110px;background-color: #28A745;">
+					<font style="font-size: xx-large;padding-top: 20px;" class="glyphicon glyphicon-home"><br />送货上门</font>
+
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div id="card3" style="height: 110px;background-color: #BD4147;">
+					<font style="font-size: xx-large;padding-top: 20px;" class="glyphicon glyphicon-lock"><br />安全付款</font>
+
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div id="card4" style="height: 110px;background-color: #FFC107;">
+					<font style="font-size: xx-large;padding-top: 20px;" class="glyphicon glyphicon-briefcase"><br />最新商品</font>
+				</div>
+				<br />
+			</div>
+
+		</div>
+
+		<%@include file="tail.jsp" %>
 	</body>
 </html>

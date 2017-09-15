@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.jdog.service.UserService;
 import com.jdog.service.UserServiceImpl;
@@ -24,7 +25,10 @@ public class RegisterServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String pwd = request.getParameter("pwd");
 		String phone = request.getParameter("phone");
+		HttpSession session = request.getSession();
 		if(us.addUser(name, pwd, phone)) {
+			session.setAttribute("UserName", us.getRnameByUname(name));
+			session.setAttribute("UserId", us.getIdByName(name));
 			response.getWriter().write("success");
 			response.getWriter().flush();
 		}

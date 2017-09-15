@@ -23,9 +23,12 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		UserService us = new UserServiceImpl();
 		PrintWriter out = response.getWriter();
+		String name = request.getParameter("uname");
+		String pwd = request.getParameter("pwd");
 		HttpSession session = request.getSession();
-		if (us.login(request.getParameter("uname"), request.getParameter("pwd"))) {
-			session.setAttribute("UserName", request.getParameter("uname"));
+		if (us.login(name, pwd)) {
+			session.setAttribute("UserName", us.getRnameByUname(name));
+			session.setAttribute("UserId", us.getIdByName(name));
 			out.write("success");
 			out.flush();
 		}
