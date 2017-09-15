@@ -42,7 +42,7 @@
 
 		<div style="padding-left: 40px;">
 			<a href="#" style="font-size: xx-large;color: #BD2130;">JDog</a>
-			<font face="楷体" size="3" color="gray">，每天都有新发现</font>
+			<font face="楷体" size="3" color="gray">每天都有新发现</font>
 		</div>
 
 		<nav class="navbar navbar-default" role="navigation" style="margin-top: 20px;">
