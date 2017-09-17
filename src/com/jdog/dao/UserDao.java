@@ -3,10 +3,8 @@ package com.jdog.dao;
 import com.jdog.domain.User;
 
 public interface UserDao {
-	public boolean login(String name,String pwd);
-	public boolean getUserByName(String name);
+	public User getUserByUName(String name);
+	public User getUserByUId(int id);
 	public boolean addUser(User user);
-	public int getIdByName(String name);
-	public String getRnameByUname(String name);
 
 }

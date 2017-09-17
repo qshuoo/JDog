@@ -1,37 +1,35 @@
 package com.jdog.domain;
 
 public class User {
-	private int id;
+	private int uid;
 	private String uname;
-	private String pwd;
+	private String upwd;
 	private String rname;
 	private String sex;
 	private String phone;
 	private String email;
-	private String time;
 	
 	public User() {
 		super();
 	}
 
-	public User(int id, String uname, String pwd, String rname, String sex, String phone, String email, String time) {
+	public User(int uid, String uname, String upwd, String rname, String sex, String phone, String email) {
 		super();
-		this.id = id;
+		this.uid = uid;
 		this.uname = uname;
-		this.pwd = pwd;
+		this.upwd = upwd;
 		this.rname = rname;
 		this.sex = sex;
 		this.phone = phone;
 		this.email = email;
-		this.time = time;
 	}
 
-	public int getId() {
-		return id;
+	public int getUid() {
+		return uid;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setUid(int uid) {
+		this.uid = uid;
 	}
 
 	public String getUname() {
@@ -42,12 +40,12 @@ public class User {
 		this.uname = uname;
 	}
 
-	public String getPwd() {
-		return pwd;
+	public String getUpwd() {
+		return upwd;
 	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setUpwd(String upwd) {
+		this.upwd = upwd;
 	}
 
 	public String getRname() {
@@ -82,19 +80,13 @@ public class User {
 		this.email = email;
 	}
 
-	public String getTime() {
-		return time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-	}
-
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", uname=" + uname + ", pwd=" + pwd + ", rname=" + rname + ", sex=" + sex + ", phone="
-				+ phone + ", email=" + email + ", time=" + time + "]";
+		return "User [uid=" + uid + ", uname=" + uname + ", upwd=" + upwd + ", rname=" + rname + ", sex=" + sex
+				+ ", phone=" + phone + ", email=" + email + "]";
 	}
+
+	
 	
 	
 

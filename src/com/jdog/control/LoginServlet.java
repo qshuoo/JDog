@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.jdog.service.UserService;
-import com.jdog.service.UserServiceImpl;
+import com.jdog.service.impl.UserServiceImpl;
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,8 +27,8 @@ public class LoginServlet extends HttpServlet {
 		String pwd = request.getParameter("pwd");
 		HttpSession session = request.getSession();
 		if (us.login(name, pwd)) {
-			session.setAttribute("UserName", us.getRnameByUname(name));
-			session.setAttribute("UserId", us.getIdByName(name));
+			session.setAttribute("UserName", us.getDisplayName(name));
+			session.setAttribute("UserId", us.getUserByUName(name).getUid());
 			out.write("success");
 			out.flush();
 		}
