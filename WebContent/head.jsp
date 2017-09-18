@@ -54,11 +54,11 @@
 					<!--向左对齐-->
 					<ul class="nav navbar-nav navbar-left" style="padding-left: 15px;">
 						<li class="head-list" style="width: 80px;text-align: center;">
-								<a href="#">主页</a>
+								<a href="index.jsp">主页</a>
 
 						</li>
 						<li class="head-list" style="width: 80px;text-align: center;">
-								<a href="#">产品</a>
+								<a href="ProductServlet">产品</a>
 
 						</li>
 						<li class="head-list" style="width: 80px;text-align: center;">

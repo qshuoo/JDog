@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,104 +32,21 @@
 
 		<!--商品-->
 		<div class="container" style="padding-top: 3%;">
-			<!--<div class="col-md-1"></div>-->
-			<div align="center" class="col-md-12">
+		<div align="center" class="col-md-12">
+			<c:forEach var="plist" items="${Products}">
 				<div class="col-sm-6 col-md-3">
 					<div class="thumbnail">
-						<img border="1px" src="img/product-5.jpg" alt="通用的占位符缩略图">
+						<img border="1px" src= "${plist.pimg}" alt="通用的占位符缩略图">
 						<div class="caption">
-							<h5><strong>名称</strong></h5>
-							<h6>价格</h6>
+							<h5><strong>${plist.pname}</strong></h5>
+							<h6>${plist.price}</h6>
 							<a href="#" class="btn btn-default" role="button">
 								加入购物车
 							</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="thumbnail">
-						<img src="img/product-5.jpg" alt="通用的占位符缩略图">
-						<div class="caption">
-							<h5><strong>名称</strong></h5>
-							<h6>价格</h6>
-							<a href="#" class="btn btn-default" role="button">
-								加入购物车
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="thumbnail">
-						<img src="img/product-5.jpg" alt="通用的占位符缩略图">
-						<div class="caption">
-							<h5><strong>名称</strong></h5>
-							<h6>价格</h6>
-							<a href="#" class="btn btn-default" role="button">
-								加入购物车
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="thumbnail">
-						<img src="img/product-5.jpg" alt="通用的占位符缩略图">
-						<div class="caption">
-							<h5><strong>名称</strong></h5>
-							<h6>价格</h6>
-							<a href="#" class="btn btn-default" role="button">
-								加入购物车
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="thumbnail">
-						<img src="img/product-5.jpg" alt="通用的占位符缩略图">
-						<div class="caption">
-							<h5><strong>名称</strong></h5>
-							<h6>价格</h6>
-							<a href="#" class="btn btn-default" role="button">
-								加入购物车
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="thumbnail">
-						<img src="img/product-5.jpg" alt="通用的占位符缩略图">
-						<div class="caption">
-							<h5><strong>名称</strong></h5>
-							<h6>价格</h6>
-							<a href="#" class="btn btn-default" role="button">
-								加入购物车
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="thumbnail">
-						<img src="img/product-5.jpg" alt="通用的占位符缩略图">
-						<div class="caption">
-							<h5><strong>名称</strong></h5>
-							<h6>价格</h6>
-							<a href="#" class="btn btn-default" role="button">
-								加入购物车
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="thumbnail">
-						<img src="img/product-5.jpg" alt="通用的占位符缩略图">
-						<div class="caption">
-							<h5><strong>名称</strong></h5>
-							<h6>价格</h6>
-							<a href="#" class="btn btn-default" role="button">
-								加入购物车
-							</a>
-						</div>
-					</div>
-				</div>
+			</c:forEach>
 			</div>
 		</div>
 		<!--分页-->
@@ -141,18 +59,11 @@
 				<li class="pagelist active" value="0">
 					<a href="javascript:void(0);">1</a>
 				</li>
-				<li class="pagelist" value="1">
-					<a href="javascript:void(0);">2</a>
+				<c:forEach var="i" begin="1" end="${Pages}">
+				<li class="pagelist" value="${i}">
+					<a href="javascript:void(0);">${i+1}</a>
 				</li>
-				<li class="pagelist" value="2">
-					<a href="javascript:void(0);">3</a>
-				</li>
-				<li class="pagelist" value="3">
-					<a href="javascript:void(0);">4</a>
-				</li>
-				<li class="pagelist" value="4">
-					<a href="javascript:void(0);">5</a>
-				</li>
+				</c:forEach>
 				<li id="pagego">
 					<a href="javascript:void(0);">&raquo;</a>
 				</li>
