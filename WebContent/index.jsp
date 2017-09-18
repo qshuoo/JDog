@@ -9,8 +9,6 @@
 		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="css/index_style.css" />
-		<script type="text/javascript" src="js/indexcontrol.js" ></script>
-
 	</head>
 
 	<body>

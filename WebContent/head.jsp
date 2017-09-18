@@ -53,19 +53,19 @@
 				<div>
 					<!--向左对齐-->
 					<ul class="nav navbar-nav navbar-left" style="padding-left: 15px;">
-						<li id="li1" style="width: 80px;text-align: center;">
+						<li class="head-list" style="width: 80px;text-align: center;">
 								<a href="#">主页</a>
 
 						</li>
-						<li id="li2" style="width: 80px;text-align: center;">
+						<li class="head-list" style="width: 80px;text-align: center;">
 								<a href="#">产品</a>
 
 						</li>
-						<li id="li3" style="width: 80px;text-align: center;">
+						<li class="head-list" style="width: 80px;text-align: center;">
 								<a href="#">购物车</a>
 
 						</li>
-						<li id="li4" style="width: 80px;text-align: center;">
+						<li class="head-list" style="width: 80px;text-align: center;">
 								<a href="#">结算</a>
 						</li>
 					</ul>

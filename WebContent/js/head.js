@@ -6,4 +6,13 @@ $(document).ready(function() {
 		$("#name_control").show();
 		$("#login_control").hide();
 	}
+	
+	$(".head-list").mouseenter(function(){
+		$(".head-list.active").removeClass("active");
+		$(this).addClass("active");
+	});
+	$(".head-list").mouseleave(function(){
+		$(this).removeClass("active");
+	});
+	
 });

@@ -11,6 +11,7 @@
 <script
 	src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/index_style.css" />
+<script src="js/tail.js"></script>
 </head>
 <body>
 	<div align="center" style="color: gray; height: 80px;">
