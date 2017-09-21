@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDao {
 			pst.setString(5, user.getPhone());
 			pst.setString(6, user.getEmail());
 			return pst.executeUpdate() > 0;
-
+ 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,6 +44,7 @@ public class UserDaoImpl implements UserDao {
 	public User getUserByUName(String name) {
 		// TODO Auto-generated method stub
 		Connection conn = JDBCConnPool.getConnection();
+		
 		Statement pst = null;
 		ResultSet res = null;
 		User user = new User();
@@ -63,9 +64,10 @@ public class UserDaoImpl implements UserDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			JDBCConnPool.close(conn, pst, res);
 		}
+		/*finally {
+			JDBCConnPool.close(conn, pst, res);
+		}*/
 		return null;
 	}
 

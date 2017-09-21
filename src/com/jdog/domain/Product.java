@@ -5,6 +5,7 @@ public class Product {
 	private String pname;
 	private double price;
 	private int pnum;
+	private int ptype;
 	private String pimg;
 	private String pdes;
 	
@@ -12,12 +13,13 @@ public class Product {
 		super();
 	}
 
-	public Product(int pid, String pname, double price, int pnum, String pimg, String pdes) {
+	public Product(int pid, String pname, double price, int pnum, int ptype, String pimg, String pdes) {
 		super();
 		this.pid = pid;
 		this.pname = pname;
 		this.price = price;
 		this.pnum = pnum;
+		this.ptype = ptype;
 		this.pimg = pimg;
 		this.pdes = pdes;
 	}
@@ -54,6 +56,14 @@ public class Product {
 		this.pnum = pnum;
 	}
 
+	public int getPtype() {
+		return ptype;
+	}
+
+	public void setPtype(int ptype) {
+		this.ptype = ptype;
+	}
+
 	public String getPimg() {
 		return pimg;
 	}
@@ -72,9 +82,11 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [pid=" + pid + ", pname=" + pname + ", price=" + price + ", pnum=" + pnum + ", pimg=" + pimg
-				+ ", pdes=" + pdes + "]";
+		return "Product [pid=" + pid + ", pname=" + pname + ", price=" + price + ", pnum=" + pnum + ", ptype=" + ptype
+				+ ", pimg=" + pimg + ", pdes=" + pdes + "]";
 	}
+
+
 	
 	
 	

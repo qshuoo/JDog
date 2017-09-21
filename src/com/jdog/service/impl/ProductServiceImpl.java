@@ -12,9 +12,18 @@ public class ProductServiceImpl implements ProductService {
 	ProductDao pd = new ProductDaoImpl();
 
 	@Override
-	public List<Product> getAllProduct() {
+	public List<Product> getAllProductByLimit(int start) {
 		// TODO Auto-generated method stub
-		return pd.getAllProduct();
+		if(start == -1)
+			start = 0;
+		return pd.getAllProductByLimit(start);
+	}
+
+	@Override
+	public int getPageNum() {
+		// TODO Auto-generated method stub
+		int num = pd.getProductCount();
+		return num/8+(num%8>0?1:0);
 	}
 
 }

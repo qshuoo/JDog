@@ -6,6 +6,7 @@ import com.jdog.domain.Product;
 
 public interface ProductService {
 	
-	public List<Product> getAllProduct();
+	public List<Product> getAllProductByLimit(int start);
+	public int getPageNum();
 
 }

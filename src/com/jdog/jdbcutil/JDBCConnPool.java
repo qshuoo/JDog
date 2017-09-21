@@ -11,7 +11,7 @@ public final class JDBCConnPool {
 	// private static JDBCConnPool instance;
 	private static ComboPooledDataSource dataSource = new ComboPooledDataSource("myc3p0xml");
 
-	public synchronized static final Connection getConnection() {
+	public static Connection getConnection() {
 		Connection conn = null;
 		try {
 			conn = dataSource.getConnection();

@@ -33,6 +33,12 @@ public class LogoffServlet extends HttpServlet {
 		session.removeAttribute("UserName");
 		session.removeAttribute("UserId");
 		response.sendRedirect("index.jsp");
+		
+		
+		
+		
+		
+		
 	}
 
 	/**

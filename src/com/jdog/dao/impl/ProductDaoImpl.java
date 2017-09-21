@@ -14,14 +14,16 @@ import com.jdog.jdbcutil.JDBCConnPool;
 public class ProductDaoImpl implements ProductDao {
 
 	@Override
-	public List<Product> getAllProduct() {
+	public List<Product> getAllProductByLimit(int start) {
 		// TODO Auto-generated method stub
 		Connection conn = JDBCConnPool.getConnection();
 		List<Product> pList = new ArrayList<>();
-		String sql = "select * from Product";
+		String sql = "select * from Product limit "+start*8+",8";
+		Statement st = null;
+		ResultSet rs = null;
 		try {
-			Statement statement = conn.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
+			st = conn.createStatement();
+			rs = st.executeQuery(sql);
 			while(rs.next()) {
 				Product product = new Product();
 				product.setPid(rs.getInt("pid"));
@@ -35,9 +37,34 @@ public class ProductDaoImpl implements ProductDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} 
+		finally {
+			JDBCConnPool.close(conn, st, rs);
+		}
+		return pList;
+	}
+
+	@Override
+	public int getProductCount() {
+		// TODO Auto-generated method stub
+		Connection conn = JDBCConnPool.getConnection();
+		String sql = "select count(*) from product";
+		Statement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.createStatement();
+			rs = st.executeQuery(sql);
+			while(rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCConnPool.close(conn, st, rs);
 		}
 		
-		return pList;
+		return 0;
 	}
 
 }

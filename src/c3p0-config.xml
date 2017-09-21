@@ -9,6 +9,7 @@
 		<property name="maxPoolSize">20</property>
 		<property name="minPoolSize">3</property>
 		<property name="maxStatements">30</property>
-		<property name="maxIdleTime">150</property>
+		<property name="maxIdleTime">60</property>
+		<property name="idleConnectionTestPeriod">30</property>
 	</named-config>
 </c3p0-config>  

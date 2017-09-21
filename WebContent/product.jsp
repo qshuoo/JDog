@@ -32,7 +32,7 @@
 
 		<!--商品-->
 		<div class="container" style="padding-top: 3%;">
-		<div align="center" class="col-md-12">
+		<div id="showProduct" align="center" class="col-md-12">
 			<c:forEach var="plist" items="${Products}">
 				<div class="col-sm-6 col-md-3">
 					<div class="thumbnail">
@@ -59,9 +59,9 @@
 				<li class="pagelist active" value="0">
 					<a href="javascript:void(0);">1</a>
 				</li>
-				<c:forEach var="i" begin="1" end="${Pages}">
-				<li class="pagelist" value="${i}">
-					<a href="javascript:void(0);">${i+1}</a>
+				<c:forEach var="i" begin="2" end="${Pages}">
+				<li class="pagelist" value="${i-1}">
+					<a href="javascript:void(0);">${i}</a>
 				</li>
 				</c:forEach>
 				<li id="pagego">
