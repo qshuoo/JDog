@@ -27,8 +27,6 @@ public class ProductServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
 		ProductService us = new ProductServiceImpl();
 		Gson gson = new Gson();
 		int start = Integer.parseInt(request.getParameter("start"));
