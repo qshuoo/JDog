@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	
+	getProduct(0)
+	
 	$(".pagelist").click(function() {
 		$(".pagelist.active").removeClass("active");
 		$(this).addClass("active");
@@ -13,9 +16,8 @@ $(document).ready(function() {
 		if (index < length - 1) {
 			$(".pagelist.active").removeClass("active");
 			$(list.get(index + 1)).addClass("active");
-
+			getProduct($(".active").val());
 		}
-		getProduct($(".active").val());
 	});
 	$("#pageback").click(function() {
 		var index = $(".active").val();
@@ -24,14 +26,13 @@ $(document).ready(function() {
 		if (index > 0) {
 			$(".pagelist.active").removeClass("active");
 			$(list.get(index - 1)).addClass("active");
-
+			getProduct($(".active").val());
 		}
-		getProduct($(".active").val());
 	});
 	
 	function getProduct(start){
 		$.ajax({
-			url : "ProductServlet",
+			url : "GetProductsServlet",
 			type : "post",
 			data : {
 				"start" : start

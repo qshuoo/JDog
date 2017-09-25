@@ -72,15 +72,14 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ProductServlet</display-name>
-    <servlet-name>ProductServlet</servlet-name>
-    <servlet-class>com.jdog.control.ProductServlet</servlet-class>
+    <display-name>GetProductsServlet</display-name>
+    <servlet-name>GetProductsServlet</servlet-name>
+    <servlet-class>com.jdog.control.GetProductsServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ProductServlet</servlet-name>
-    <url-pattern>/ProductServlet</url-pattern>
+    <servlet-name>GetProductsServlet</servlet-name>
+    <url-pattern>/GetProductsServlet</url-pattern>
   </servlet-mapping>
-  
   <filter>
     <display-name>EncodeFilter</display-name>
     <filter-name>EncodeFilter</filter-name>
@@ -90,5 +89,14 @@
     <filter-name>EncodeFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>GetProductPagesServlet</display-name>
+    <servlet-name>GetProductPagesServlet</servlet-name>
+    <servlet-class>com.jdog.control.GetProductPagesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetProductPagesServlet</servlet-name>
+    <url-pattern>/GetProductPagesServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

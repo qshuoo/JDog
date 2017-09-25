@@ -58,7 +58,7 @@
 
 						</li>
 						<li class="head-list" style="width: 80px;text-align: center;">
-								<a href="ProductServlet?start=-1">产品</a>
+								<a href="GetProductPagesServlet">产品</a>
 
 						</li>
 						<li class="head-list" style="width: 80px;text-align: center;">
