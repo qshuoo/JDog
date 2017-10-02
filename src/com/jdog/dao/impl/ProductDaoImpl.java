@@ -67,4 +67,33 @@ public class ProductDaoImpl implements ProductDao {
 		return 0;
 	}
 
+	@Override
+	public Product getProductById(String id) {
+		// TODO Auto-generated method stub
+		Connection conn = JDBCConnPool.getConnection();
+		String sql = "select * from product where pid="+id;
+		Statement st = null;
+		ResultSet rs = null;
+		Product product = new Product();
+		try {
+			st = conn.createStatement();
+			rs = st.executeQuery(sql);
+			while(rs.next()) {
+				product.setPid(rs.getInt("pid"));
+				product.setPname(rs.getString("pname"));
+				product.setPrice(rs.getDouble("price"));
+				product.setPnum(rs.getInt("pnum"));
+				product.setPimg(rs.getString("pimg"));
+				product.setPdes(rs.getString("pdes"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		finally {
+			JDBCConnPool.close(conn, st, rs);
+		}
+		return product;
+	}
+
 }

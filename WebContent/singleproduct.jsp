@@ -61,16 +61,16 @@
 				<tbody>
 					<tr>
 						<td rowspan="4">
-							<img src="img/product-5.jpg" />
+							<img src="${product.pimg }" />
 						</td>
 						<td>
 							<div style="padding-top: 30px;">
-								<strong>名称</strong>
+								<strong>${product.pname }</strong>
 							</div>
 						</td>
 					</tr>
 					<tr>
-						<td style="border: 0px;"><strong>￥6666</strong></td>
+						<td style="border: 0px;"><strong>￥ ${product.price}</strong></td>
 					</tr>
 					<tr>
 						<td style="border: 0px;">
@@ -86,7 +86,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">简介</td>
+						<td colspan="2">${product.pdes}</td>
 					</tr>
 				</tbody>
 			</table>

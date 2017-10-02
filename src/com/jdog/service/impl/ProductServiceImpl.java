@@ -26,4 +26,10 @@ public class ProductServiceImpl implements ProductService {
 		return num/8+(num%8>0?1:0);
 	}
 
+	@Override
+	public Product getProductById(String id) {
+		// TODO Auto-generated method stub
+		return pd.getProductById(id);
+	}
+
 }

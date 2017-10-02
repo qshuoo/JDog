@@ -43,7 +43,9 @@ $(document).ready(function() {
 				for (var i = 0; i < datas.length; i++) {
 					var text = "<div class=\"col-sm-6 col-md-3\">"
 								+ "<div class=\"thumbnail\">"
-								+ "<img border=\"1px\" src= \"#\" alt=\"通用的占位符缩略图\">"
+								+"<a href='ShowProductById?pid="+datas[i].pid+"' target='_blank'>"
+								+ "<img border=\"1px\" src= \""+datas[i].pimg+"\" alt=\"加载失败\">"
+								+"</a>"
 								+ "<div class=\"caption\">"
 								+ "<h5><strong>"
 								+ datas[i].pname
